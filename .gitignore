@@ -1,0 +1,5 @@
+**/pebble/
+**/datastore/
+**/blocks/
+**/*.lock
+**/peerstore
