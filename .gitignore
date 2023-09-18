@@ -3,3 +3,5 @@
 **/blocks/
 **/*.lock
 **/peerstore
+compose/ipfs*/api
+compose/ipfs*/gateway
