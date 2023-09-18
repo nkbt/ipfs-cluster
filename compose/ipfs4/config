@@ -21,12 +21,12 @@
   },
   "AutoNAT": {},
   "Bootstrap": [
-    "/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
-    "/dnsaddr/bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa",
     "/dnsaddr/bootstrap.libp2p.io/p2p/QmbLHAnMoJPWSCR5Zhtx6BHJX9KiKNN6tpvbUcqanj75Nb",
     "/dnsaddr/bootstrap.libp2p.io/p2p/QmcZf59bWwK5XFi76CZX8cbJ4BhTzzA3gU1ZjYZcYW3dwt",
     "/ip4/104.131.131.82/tcp/4001/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
-    "/ip4/104.131.131.82/udp/4001/quic/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ"
+    "/ip4/104.131.131.82/udp/4001/quic/p2p/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ",
+    "/dnsaddr/bootstrap.libp2p.io/p2p/QmNnooDu7bfjPFoTZYxMNLWUQJyrVwtbZg5gBMjTezGAJN",
+    "/dnsaddr/bootstrap.libp2p.io/p2p/QmQCU2EcMqAqQPR2i9bChDtGNJchTbq5TbXJJ16u19uLTa"
   ],
   "DNS": {
     "Resolvers": {}
@@ -90,8 +90,8 @@
     "RootRedirect": ""
   },
   "Identity": {
-    "PeerID": "12D3KooWBNYqj5uq1d696jg8KVG7dqnHTY7HqYZx5sMgZ7xcdwD3",
-    "PrivKey": "CAESQEr9tVp+LRkCLKWoyoQsU48+FuhST9fj5ujllOFdewmaFxpW/UH8sj3NoAERR8od9AeRLYFVJJ4OdjlNyyK5QQI="
+    "PeerID": "12D3KooWJcVSwMM3hYhMCbx7crA6N7SPtXmSRviyYKFra4oNABut",
+    "PrivKey": "CAESQLKOiw1ppC2d8PrYi9Fi+BMYxZgE/WBLvpX8JYudq0ILgq5xeF/by0atVGw6OKQFNRNyGjrtR5zFjuIsr3y22hs="
   },
   "Internal": {},
   "Ipns": {

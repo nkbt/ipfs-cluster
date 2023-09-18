@@ -14,15 +14,15 @@
       "grace_period": "2m0s"
     },
     "dial_peer_timeout": "3s",
-    "state_sync_interval": "5m0s",
-    "pin_recover_interval": "12m0s",
-    "replication_factor_min": -1,
-    "replication_factor_max": -1,
+    "state_sync_interval": "30s",
+    "pin_recover_interval": "1m0s",
+    "replication_factor_min": 2,
+    "replication_factor_max": 2,
     "monitor_ping_interval": "2s",
     "peer_watch_interval": "5s",
     "mdns_interval": "10s",
     "pin_only_on_trusted_peers": false,
-    "disable_repinning": true,
+    "disable_repinning": false,
     "peer_addresses": []
   },
   "consensus": {

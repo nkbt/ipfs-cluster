@@ -1,7 +1,7 @@
 {
   "cluster": {
     "peername": "cluster0",
-    "secret": "",
+    "secret": "27aecf47865da33ae0f5789f0036b853215e886c2410caf9d089573d4d866876",
     "leave_on_shutdown": false,
     "listen_multiaddress": [
       "/ip4/0.0.0.0/tcp/9096",
@@ -14,10 +14,10 @@
       "grace_period": "2m0s"
     },
     "dial_peer_timeout": "3s",
-    "state_sync_interval": "0m30s",
+    "state_sync_interval": "30s",
     "pin_recover_interval": "1m0s",
     "replication_factor_min": 2,
-    "replication_factor_max": 1000000,
+    "replication_factor_max": 2,
     "monitor_ping_interval": "2s",
     "peer_watch_interval": "5s",
     "mdns_interval": "10s",
@@ -28,7 +28,9 @@
   "consensus": {
     "crdt": {
       "cluster_name": "ipfs-cluster",
-      "trusted_peers": ["*"],
+      "trusted_peers": [
+        "*"
+      ],
       "batching": {
         "max_batch_size": 0,
         "max_batch_age": "0s"
@@ -57,8 +59,12 @@
       "basic_auth_credentials": null,
       "http_log_file": "",
       "headers": {},
-      "cors_allowed_origins": ["*"],
-      "cors_allowed_methods": ["GET"],
+      "cors_allowed_origins": [
+        "*"
+      ],
+      "cors_allowed_methods": [
+        "GET"
+      ],
       "cors_allowed_headers": [],
       "cors_exposed_headers": [
         "Content-Type",
@@ -79,8 +85,12 @@
       "basic_auth_credentials": null,
       "http_log_file": "",
       "headers": {},
-      "cors_allowed_origins": ["*"],
-      "cors_allowed_methods": ["GET"],
+      "cors_allowed_origins": [
+        "*"
+      ],
+      "cors_allowed_methods": [
+        "GET"
+      ],
       "cors_allowed_headers": [],
       "cors_exposed_headers": [
         "Content-Type",
@@ -117,7 +127,10 @@
   },
   "allocator": {
     "balanced": {
-      "allocate_by": ["tag:group", "freespace"]
+      "allocate_by": [
+        "tag:group",
+        "freespace"
+      ]
     }
   },
   "informer": {
