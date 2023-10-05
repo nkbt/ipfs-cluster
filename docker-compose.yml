@@ -27,10 +27,6 @@ version: "3.4"
 # During the first start, default configurations are created for all peers.
 
 services:
-  ##################################################################################
-  ## Cluster PEER 0 ################################################################
-  ##################################################################################
-
   ipfs0:
     container_name: ipfs0
     image: ipfs/kubo:release
@@ -61,23 +57,16 @@ services:
       CLUSTER_PINRECOVERINTERVAL: "1m0s"
 
     ports:
-      - "9094:9094" # http api
-      #      - "9095:9095" # proxy api
-      #      - "9096:9096" # cluster swarm, other peers connect via this port
-      #    ports:
-      #      # Open API port (allows ipfs-cluster-ctl usage on host)
-      #- "127.0.0.1:9094:9094"
-    #      # The cluster swarm port would need  to be exposed if this container
-    #      # was to connect to cluster peers on other hosts.
-    #      # But this is just a testing cluster.
-    #      # - "9095:9095" # Cluster IPFS Proxy endpoint
-    #      # - "9096:9096" # Cluster swarm endpoint
+      # Open API port (allows ipfs-cluster-ctl usage on host)
+      - "9094:9094"
+      # The cluster swarm port would need  to be exposed if this container
+      # was to connect to cluster peers on other hosts.
+      # But this is just a testing cluster.
+      # - "9095:9095" # Cluster IPFS Proxy endpoint
+      # - "9096:9096" # Cluster swarm endpoint
     volumes:
       - ./compose/cluster0:/data/ipfs-cluster
 
-  ##################################################################################
-  ## Cluster PEER 1 ################################################################
-  ##################################################################################
   ipfs1:
     container_name: ipfs1
     image: ipfs/kubo:release
@@ -218,7 +207,36 @@ services:
       CLUSTER_STATESYNCINTERVAL: "0m30s"
       CLUSTER_PINRECOVERINTERVAL: "1m0s"
 
+  ipfs6:
+    container_name: ipfs6
+    image: ipfs/kubo:release
     volumes:
-      - ./compose/cluster5:/data/ipfs-cluster
+      - ./compose/ipfs6:/data/ipfs
+      - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
+
+  cluster6:
+    container_name: cluster6
+    image: ipfs/ipfs-cluster:latest
+    depends_on:
+      - ipfs6
+      # only for initial bootstrap:
+      - cluster1
+      - cluster2
+    environment:
+      CLUSTER_PEERNAME: cluster6
+      CLUSTER_SECRET: ${CLUSTER_SECRET} # From shell variable if set
+      CLUSTER_IPFSHTTP_NODEMULTIADDRESS: /dns4/ipfs6/tcp/5001
+      CLUSTER_CRDT_TRUSTEDPEERS: "*" # Trust all peers in Cluster
+      CLUSTER_MONITORPINGINTERVAL: 2s # Speed up peer discovery
+
+      CLUSTER_REPLICATIONFACTORMIN: 2
+      CLUSTER_REPLICATIONFACTORMAX: 2
+      CLUSTER_DISABLEREPINNING: false
+      CLUSTER_STATESYNCINTERVAL: "0m30s"
+      CLUSTER_PINRECOVERINTERVAL: "1m0s"
+
+    volumes:
+      - ./compose/cluster6:/data/ipfs-cluster
     command:
-      - "daemon --bootstrap ${CLUSTER_PEER0}" # add multiple peers with comma seperated
+      - "daemon --bootstrap ${CLUSTER_PEER1},${CLUSTER_PEER2}" # add multiple peers with comma seperated
+      # - "daemon" # after first inbitial bootstrap peerstore will be populated and we no longer need bootstrapping
