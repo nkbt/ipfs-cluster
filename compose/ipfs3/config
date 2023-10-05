@@ -20,8 +20,7 @@
     ]
   },
   "AutoNAT": {},
-  "Bootstrap": [
-  ],
+  "Bootstrap": null,
   "DNS": {
     "Resolvers": {}
   },
@@ -84,15 +83,14 @@
     "RootRedirect": ""
   },
   "Identity": {
-    "PeerID": "12D3KooWDk9VNRAmre7fckhzDcnmSrH3HFkVUenHzE82n1qGRipf",
-    "PrivKey": "CAESQPndonz4Nl12Mg+DSIrWdlQ+Jd7OjyFKZY9i12A8WosgOloWoyFDVHH425bZ9QQyzZUVqN6ZPD8p6PcOCpdX1sA="
+    "PeerID": "12D3KooWRXvueG4toBs5AGwQyCHKxr2y717gPcmq4KxED88NVMK8",
+    "PrivKey": "CAESQJG2XAI6WyKJoGnBaGeaUmz7Uoo1W+NUpDCZP7IgjPgV6YUiyangVBrjnZ9z3vLQ4WklnvwF42yyDLq+1rAKvbs="
   },
   "Internal": {},
   "Ipns": {
-    "RepublishPeriod": "70s",
     "RecordLifetime": "",
     "RepublishPeriod": "",
-    "ResolveCacheSize": 0
+    "ResolveCacheSize": 128
   },
   "Migration": {
     "DownloadSources": [],
@@ -126,7 +124,9 @@
     "Routers": null
   },
   "Swarm": {
-    "AddrFilters": null,
+    "AddrFilters": [
+      "/ip4/172.18.0.0/ipcidr/16"
+    ],
     "ConnMgr": {},
     "DisableBandwidthMetrics": false,
     "DisableNatPortMap": false,

@@ -83,8 +83,8 @@
     "RootRedirect": ""
   },
   "Identity": {
-    "PeerID": "12D3KooW9tgDrffyvsJiP4F3eokCDwS36XYDjf6DStueh7dcWn39",
-    "PrivKey": "CAESQAdrbXnDzj6ZOp+ywToNGiT9VNGhN/qVyi5sKwewe0FBARq8kK/LrMP5LeDNOfmwLOiWBb2cjWVwScLLxuBTZIg="
+    "PeerID": "12D3KooWA65m2TQUv1efWE8z8SsAWy25uDhoEkjG3bSomo6N3tPv",
+    "PrivKey": "CAESQEtk2Ao8pA+aCH94vh54aFuMtEk21c+rWQSbhYFjs0eBBAa9QpQZv76KONF0O9LeIYTLPdW3PI5O6sQrg0nnY50="
   },
   "Internal": {},
   "Ipns": {
@@ -124,7 +124,9 @@
     "Routers": null
   },
   "Swarm": {
-    "AddrFilters": null,
+    "AddrFilters": [
+      "/ip4/172.18.0.0/ipcidr/16"
+    ],
     "ConnMgr": {},
     "DisableBandwidthMetrics": false,
     "DisableNatPortMap": false,

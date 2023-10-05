@@ -3,7 +3,7 @@ version: "3.4"
 # This is an example docker-compose file to quickly test an IPFS Cluster
 # with multiple peers on a contained environment.
 
-# It runs 3 cluster peers (cluster0, cluster1...) attached to kubo daemons
+# It runs cluster peers (cluster0, cluster1...) attached to kubo daemons
 # (ipfs0, ipfs1...) using the CRDT consensus component. Cluster peers
 # autodiscover themselves using mDNS on the docker internal network.
 #
@@ -36,6 +36,7 @@ services:
       - "8080:8080" # ipfs gateway - expose if needed/wanted
     volumes:
       - ./compose/ipfs0:/data/ipfs
+      - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster0:
     container_name: cluster0
@@ -72,6 +73,7 @@ services:
     image: ipfs/kubo:release
     volumes:
       - ./compose/ipfs1:/data/ipfs
+      - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster1:
     container_name: cluster1
@@ -101,6 +103,7 @@ services:
     image: ipfs/kubo:release
     volumes:
       - ./compose/ipfs2:/data/ipfs
+      - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster2:
     container_name: cluster2
@@ -130,6 +133,7 @@ services:
     image: ipfs/kubo:release
     volumes:
       - ./compose/ipfs3:/data/ipfs
+      - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster3:
     container_name: cluster3
@@ -159,6 +163,7 @@ services:
     image: ipfs/kubo:release
     volumes:
       - ./compose/ipfs4:/data/ipfs
+      - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster4:
     container_name: cluster4
@@ -188,6 +193,7 @@ services:
     image: ipfs/kubo:release
     volumes:
       - ./compose/ipfs5:/data/ipfs
+      - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster5:
     container_name: cluster5

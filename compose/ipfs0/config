@@ -83,14 +83,14 @@
     "RootRedirect": ""
   },
   "Identity": {
-    "PeerID": "12D3KooWKjxwnhSufa2FftGrDFPay9M4pdjcvzbYJhFwP3xRu9Kr",
-    "PrivKey": "CAESQA+aURPrTgyoAq9gcTACoCE6Ou/PxNL6qizkCDZlFAiok3RJisCnbfbA3z6/vZ5Z8eJr2xmM4UdMGKcQLOaYyeU="
+    "PeerID": "12D3KooWMGd54KkrdSvQwEeEH5Af7ZhcuwFi88KyoFgPLLBWuXFy",
+    "PrivKey": "CAESQJsY94+tMvRiNlGqVMN26IdplheTmUx9gZC5q5RBTUzhqiqBxd3pqXNL9RRrH+fBAyJtu21lRvpAWRxM9DuJIww="
   },
   "Internal": {},
   "Ipns": {
     "RecordLifetime": "",
     "RepublishPeriod": "",
-    "ResolveCacheSize": 0
+    "ResolveCacheSize": 128
   },
   "Migration": {
     "DownloadSources": [],
@@ -125,7 +125,7 @@
   },
   "Swarm": {
     "AddrFilters": [
-      "/ip4/172.19.0.0/ipcidr/16"
+      "/ip4/172.18.0.0/ipcidr/16"
     ],
     "ConnMgr": {},
     "DisableBandwidthMetrics": false,
