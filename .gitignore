@@ -5,3 +5,4 @@
 **/peerstore
 compose/ipfs*/api
 compose/ipfs*/gateway
+!swarm.key

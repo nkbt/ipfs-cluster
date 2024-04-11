@@ -118,7 +118,8 @@
   "Routing": {
     "AcceleratedDHTClient": false,
     "Methods": null,
-    "Routers": null
+    "Routers": null,
+    "Type": "dht"
   },
   "Swarm": {
     "AddrFilters": null,
