@@ -11,10 +11,8 @@
     "Swarm": [
       "/ip4/0.0.0.0/tcp/4001",
       "/ip6/::/tcp/4001",
-      "/ip4/0.0.0.0/udp/4001/quic",
       "/ip4/0.0.0.0/udp/4001/quic-v1",
       "/ip4/0.0.0.0/udp/4001/quic-v1/webtransport",
-      "/ip6/::/udp/4001/quic",
       "/ip6/::/udp/4001/quic-v1",
       "/ip6/::/udp/4001/quic-v1/webtransport"
     ]
@@ -64,7 +62,6 @@
   },
   "Experimental": {
     "FilestoreEnabled": false,
-    "GraphsyncEnabled": false,
     "Libp2pStreamMounting": false,
     "OptimisticProvide": false,
     "OptimisticProvideJobsPoolSize": 0,
@@ -73,18 +70,18 @@
     "UrlstoreEnabled": false
   },
   "Gateway": {
-    "APICommands": [],
     "DeserializedResponses": null,
+    "DisableHTMLErrors": null,
+    "ExposeRoutingAPI": null,
     "HTTPHeaders": {},
     "NoDNSLink": false,
     "NoFetch": false,
-    "PathPrefixes": [],
     "PublicGateways": null,
     "RootRedirect": ""
   },
   "Identity": {
-    "PeerID": "12D3KooWMQoneaTbBkA38uHCBv34Lbi9izQwdcdWBtEUfEfvNpZc",
-    "PrivKey": "CAESQLITO3TqC11PP6QEBZPHPNvP97waRDKskp+rQdk59ldbrENFb9eZkTP2llIAHI23xOLgPyoX7Dngwmag+V/eeZc="
+    "PeerID": "12D3KooWD9qV4u3baPNB9HojLgcSXgZuMj2mL4pYegovED6YHcer",
+    "PrivKey": "CAESQHbOuASxENNgGTVyPS5XWlhXv9Bbj98QkbwMUto3eTEVMY/7fD+2d9aT8PVlizwgDxQNPiWvParwIRpMY4IsgI8="
   },
   "Internal": {},
   "Ipns": {
@@ -124,9 +121,7 @@
     "Routers": null
   },
   "Swarm": {
-    "AddrFilters": [
-      "/ip4/172.18.0.0/ipcidr/16"
-    ],
+    "AddrFilters": null,
     "ConnMgr": {},
     "DisableBandwidthMetrics": false,
     "DisableNatPortMap": false,

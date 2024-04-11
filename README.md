@@ -70,10 +70,6 @@ A script named `ipfs-bootstrap.sh`, executed during the container startup, plays
 
 - An outlined command, `ipfs bootstrap add "/ip4/$PRIVATE_PEER_IP_ADDR/tcp/4001/ipfs/$PRIVATE_PEER_ID"`, is a placeholder for quickly adding private peers that will not connect to the public IPFS network, further ensuring network isolation.
 
-- The script then applies the `Swarm.AddrFilters` configuration by running `ipfs config --json Swarm.AddrFilters '["/ip4/172.18.0.0/ipcidr/16"]'`. This configuration sets a range of addresses, specified by the CIDR notation, that IPFS should avoid when establishing outbound connections. In this case, all addresses within the IP range `172.18.0.0/16` are excluded from IPFS's outbound connections, a particularly beneficial practice if you wish to restrict the networking of your IPFS nodes to a specific subnet or limit exposure to certain networks for security and isolation purposes.
-
-This setup thus only allows the node to connect to intended peers, maintaining the privacy, security, and integrity of your IPFS network. This proof of concept can, therefore, provide a platform for creating a robust, distributed file storage system using IPFS.
-
 ## Bootstrapping the Cluster Node
 
 In the `cluster6` configuration, the `command` section clearly outlines what to do at container startup.

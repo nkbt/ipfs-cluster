@@ -29,7 +29,7 @@ version: "3.4"
 services:
   ipfs0:
     container_name: ipfs0
-    image: ipfs/kubo:release
+    image: ipfs/kubo:v0.27.0
     ports:
       #      - "4001:4001" # ipfs swarm - expose if needed/wanted
       - "5001:5001" # ipfs api - expose if needed/wanted
@@ -40,7 +40,7 @@ services:
 
   cluster0:
     container_name: cluster0
-    image: ipfs/ipfs-cluster:latest
+    image: ipfs/ipfs-cluster:v1.0.8
     depends_on:
       - ipfs0
     environment:
@@ -70,14 +70,14 @@ services:
 
   ipfs1:
     container_name: ipfs1
-    image: ipfs/kubo:release
+    image: ipfs/kubo:v0.27.0
     volumes:
       - ./compose/ipfs1:/data/ipfs
       - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster1:
     container_name: cluster1
-    image: ipfs/ipfs-cluster:latest
+    image: ipfs/ipfs-cluster:v1.0.8
     depends_on:
       - ipfs1
     environment:
@@ -100,14 +100,14 @@ services:
 
   ipfs2:
     container_name: ipfs2
-    image: ipfs/kubo:release
+    image: ipfs/kubo:v0.27.0
     volumes:
       - ./compose/ipfs2:/data/ipfs
       - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster2:
     container_name: cluster2
-    image: ipfs/ipfs-cluster:latest
+    image: ipfs/ipfs-cluster:v1.0.8
     depends_on:
       - ipfs2
     environment:
@@ -130,14 +130,14 @@ services:
 
   ipfs3:
     container_name: ipfs3
-    image: ipfs/kubo:release
+    image: ipfs/kubo:v0.27.0
     volumes:
       - ./compose/ipfs3:/data/ipfs
       - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster3:
     container_name: cluster3
-    image: ipfs/ipfs-cluster:latest
+    image: ipfs/ipfs-cluster:v1.0.8
     depends_on:
       - ipfs3
     environment:
@@ -160,14 +160,14 @@ services:
 
   ipfs4:
     container_name: ipfs4
-    image: ipfs/kubo:release
+    image: ipfs/kubo:v0.27.0
     volumes:
       - ./compose/ipfs4:/data/ipfs
       - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster4:
     container_name: cluster4
-    image: ipfs/ipfs-cluster:latest
+    image: ipfs/ipfs-cluster:v1.0.8
     depends_on:
       - ipfs4
     environment:
@@ -190,14 +190,14 @@ services:
 
   ipfs5:
     container_name: ipfs5
-    image: ipfs/kubo:release
+    image: ipfs/kubo:v0.27.0
     volumes:
       - ./compose/ipfs5:/data/ipfs
       - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster5:
     container_name: cluster5
-    image: ipfs/ipfs-cluster:latest
+    image: ipfs/ipfs-cluster:v1.0.8
     depends_on:
       - ipfs5
     environment:
@@ -215,14 +215,14 @@ services:
 
   ipfs6:
     container_name: ipfs6
-    image: ipfs/kubo:release
+    image: ipfs/kubo:v0.27.0
     volumes:
       - ./compose/ipfs6:/data/ipfs
       - ./ipfs-bootstrap.sh:/container-init.d/001-ipfs-bootstrap.sh
 
   cluster6:
     container_name: cluster6
-    image: ipfs/ipfs-cluster:latest
+    image: ipfs/ipfs-cluster:v1.0.8
     depends_on:
       - ipfs6
       # only for initial bootstrap:
